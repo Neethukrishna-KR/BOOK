@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Home</h2>
+<div>
+    @Html.ActionLink("View Admin Profile", "profile_pageload", "adminp")
+</div>
+<div>
+    @Html.ActionLink("change password","pwd_load","changepwd")
+</div>
+
+<div>
+    @Html.ActionLink("viewbook", "book_pageload", "viewbook")
+</div>
+
+
+
+

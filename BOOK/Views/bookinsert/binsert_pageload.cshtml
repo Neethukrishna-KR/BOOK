@@ -1,0 +1,57 @@
+﻿@model BOOK.Models.bookinsert
+@{
+    ViewBag.Title = "binsert_pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>book Registration</h2>
+
+<div>
+    @using (Html.BeginForm("binsert_click", "bookinsert", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div>
+                    <label>
+                        Book Name:
+                    </label>
+                </div>
+                <div>
+                    
+
+                        @Html.TextBoxFor(m => m.name)
+                        @Html.ValidationMessageFor(m => m.name)
+
+                    
+                </div>
+                <div>
+                    <label>
+                        Book Price:
+                    </label>
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.price)
+                    @Html.ValidationMessageFor(m => m.price)
+                </div>
+                <div>
+                    <label>
+                        Book Author:
+                    </label>
+                </div>
+                <div>
+                    @Html.TextBoxFor(m => m.author)
+                    @Html.ValidationMessageFor(m => m.author)
+                </div>
+                <div>
+                    <label>
+                        Image:
+                    </label>
+                </div>
+                <div>
+                    @Html.TextBox("file", "", new {Type="file"})
+                </div>
+                <div>
+                    <input type="submit" value="insert"/>
+                    @Html.DisplayFor(m => m.msg)
+                </div>
+            }
+</div>
+

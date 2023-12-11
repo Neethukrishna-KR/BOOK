@@ -1,0 +1,71 @@
+﻿@model IEnumerable<BOOK.book>
+@{
+    ViewBag.Title = "book_pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ALL BOOKS LIST</h2>
+
+<div>
+
+    @using(Html.BeginForm("book_pageload", "viewbook", FormMethod.Get))
+            {
+           <table class="table">
+               <tr>
+                   <th>
+
+                       @Html.DisplayNameFor(m => m.name)
+                   </th>
+
+                   <th>
+
+                       @Html.DisplayNameFor(m => m.price)
+                   </th>
+
+                   <th>
+
+                       @Html.DisplayNameFor(m => m.author)
+                   </th>
+
+                   <th>
+
+                       @Html.DisplayNameFor(m => m.image)
+                   </th>
+               </tr>
+               @foreach (var item in Model)
+               {
+
+
+
+
+
+
+           <tr>
+               <td>
+                   @Html.DisplayFor(modelitem => item.name)
+
+               </td>
+
+               <td>
+                   @Html.DisplayFor(modelitem => item.price)
+
+               </td>
+
+               <td>
+                   @Html.DisplayFor(modelitem => item.author)
+
+               </td>
+
+               <td>
+                   <img src="@Url.Content(item.image)" alt="image" height="150" width="150px"/>
+               </td>
+           </tr>
+               }
+
+
+
+           </table>
+
+            }
+</div>
+

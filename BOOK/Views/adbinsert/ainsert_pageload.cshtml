@@ -1,0 +1,82 @@
+﻿@model BOOK.Models.admininsert
+    
+@{
+    ViewBag.Title = "ainsert_pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ADMIN REGISTER</h2>
+
+<div>
+
+    @using (Html.BeginForm("ainsert_click", "adbinsert", FormMethod.Post))
+    {
+
+        <div>
+            <label>
+                Name:
+            </label>
+
+
+        </div>
+        <div>
+
+            @Html.TextBoxFor(m => m.name)
+            @Html.ValidationMessageFor(m => m.name)
+
+        </div>
+
+        <div>
+            <label>
+                Email:
+            </label>
+        </div>
+        <div>
+
+            @Html.TextBoxFor(m => m.email)
+            @Html.ValidationMessageFor(m => m.email)
+
+        </div>
+        <div>
+            <label>
+                username:
+            </label>
+
+        </div>
+        <div>
+
+            @Html.TextBoxFor(m => m.uname)
+            @Html.ValidationMessageFor(m => m.uname)
+
+        </div>
+        <div>
+            <label>
+                password:
+            </label>
+        </div>
+
+        <div>
+            @Html.PasswordFor(m => m.password)
+        </div>
+        <div>
+            <label>
+
+                confirm password:
+            </label>
+        </div>
+
+        <div>
+            @Html.PasswordFor(m => m.confirmpassword)
+
+            @Html.ValidationMessageFor(m => m.confirmpassword)
+        </div>
+        <div>
+
+            <input type="submit" value="insert" />
+            @Html.DisplayFor(m => m.msg)
+        </div>
+    }
+
+
+</div>
+
